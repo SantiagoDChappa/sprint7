@@ -1,0 +1,30 @@
+<header>
+<div class="nav-top">
+    <a href="http://localhost:3000/" id="logo"><img  src="/img/logo2.png"></a>
+    <form action="" method="GET" class="form-search">
+      <input type="search" name="search" id="search" placeholder="Buscar productos, marcas...">
+    </form>
+    <div class="carrito">
+      <a href="http://localhost:3000/carrito-de-compras"><i class="fas fa-shopping-cart"></i></a>
+      <a href="http://localhost:3000/carrito-de-compras" id="span"><span>Carrito de compras</span></a>
+    </div>
+  </div>
+  <div class="nav-bottom">
+    <ul class="contenedor1">
+      <li><a href="/productos">Todos los productos<i class=" fas fa-arrow-circle-down"></a></i></li>
+    </ul>
+    <ul class="contenedor2">
+      <li><a href="#">Contacto</a></li>
+      <% if (locals.isLogged) { %>
+        <li><a href="/usuario/<%= locals.id%>">Perfil<i class="far fa-id-badge"></i></a></li>
+      <% }else{ %>
+        <li><a href="/registro">Crear Cuenta<i class="far fa-id-card"></i></a></li>
+        <li><a href="/ingreso">Ingresar<i class="fas fa-sign-in-alt"></i></a></li>
+      <% } %> 
+    </ul>
+  </div>
+  <div class="barra">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+

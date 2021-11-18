@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/crear-producto.css">
+    <title>Crear producto</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="crear">
+        <h2>Crear nuevo producto</h2>
+        <form action="/productos" method="POST">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" name="name" id="nombre">
+
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" name="description" id="descripcion">
+
+            <label for="imagen">Agregar imagen: </label>
+            <input type="file" name="images" id="imagen" accept=".jpg, .png" multiple>
+
+            <label for="mark">Marca: </label>
+            <select name="mark">
+                <% marca.forEach(marca => { %>
+                        <option value="<%= marca.Nombre %>"><%= marca.Nombre %> </option>
+                <% }) %>
+            </select>
+
+            <label for="precio">Precio: </label>
+            <input type="number" name="price" id="precio" min="1">
+
+            <label for="imagen">Descuento: </label>
+            <input type="number" name="discount" id="discount">
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Eliminar</button>
+        </div>
+        </form>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

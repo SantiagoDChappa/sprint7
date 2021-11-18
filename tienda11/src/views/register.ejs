@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link href="/css/register.css" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    
+    <main class="main-register">
+        <section class="registro">
+            <h2>REGISTRO</h2>
+        <form action="/usuario/registro" method="POST"enctype="multipart/form-data">
+        <div class="left-register">
+            <input type="text" name="name" id="nameRegister" placeholder="Nombre completo">
+            <% if(locals.errors){ %>
+                <% if(errors.name){ %>
+                    <p class="errorMsg"><%= errors.name.msg%></p>
+                <%} %> 
+            <%} %> 
+            <input type="text" name="lastName" id="apellidoRegister" placeholder="Apellido">
+            <% if(locals.errors){ %>
+                <% if(errors.lastName){ %>
+                    <p class="errorMsg"><%= errors.lastName.msg%></p>
+                <%} %> 
+            <%} %> 
+            <div class="image">
+            <label for="images">Foto de perfil:</label>
+            <input type="file" name="images" id="imagenes" accept=".jpg , .png" multiple>
+            <% if(locals.errors){ %>
+                <% if(errors.images){ %>
+                    <p class="errorMsg"><%= errors.images.msg%></p>
+                <%} %> 
+            <%} %> 
+            </div>
+            <input type="email" name="email" id="emailRegister" placeholder="Correo electrónico">
+            <% if(locals.errors){ %>
+                <% if(errors.email){ %>
+                    <p class="errorMsg"><%= errors.email.msg%></p>
+                <%} %> 
+            <%} %> 
+            <input type="password" name="password" id="passwordRegister" placeholder="Contraseña">
+            <% if(locals.errors){ %>
+                <% if(errors.password){ %>
+                    <p class="errorMsg"><%= errors.password.msg%></p>
+                <%} %> 
+            <%} %> 
+            <input type="password" name="confirmpassword" id="passConfirmRegister" placeholder="Confirmar contraseña">
+            <% if(locals.errors){ %>
+                <% if(errors.confirmpassword){ %>
+                    <p class="errorMsg"><%= errors.confirmpassword.msg%></p>
+                <%} %> 
+            <%} %> 
+            <button type="submit" id="boton-registro">Registrarme</button>
+        </div>
+        <div class="right-register">
+                <label for="boton-ingreso">¿Ya tenés una cuenta?</label>
+                <button id="boton-ingreso">Ingresar</button>
+        </div>
+    </form>
+    </section>
+    </main>
+    <footer  class="foot">
+        <%- include('partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

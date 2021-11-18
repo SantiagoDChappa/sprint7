@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link href="/css/listado.css" rel="stylesheet">
+    <title>Listado de productos</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <% productos.forEach(productos=>{ %>
+        <a id="link-producto" href="/productos/<%= productos.ID_Producto %>">
+            <article class="productos">
+            <div class="item">
+                <img src="/img/<%= productos.Imagen%>">
+            </div>
+            <div class="detalle">
+                <p id="precio">$<%= productos.Precio %></p>
+                
+                <p id="descuento"><%= productos.Descuento%>% OFF</p>
+                
+                <p id="producto-nombre"><%= productos.Nombre%></p>
+            </div>
+        </article>
+        </a>
+        <% }) %>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/editar-producto.css">
+    <title>Crear producto</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="editar">
+        <h2>Editar producto existente</h2>
+        <form action="/productos/<%= producto.id%>?_method=PUT" method="POST">
+            <label for="nombre">Nombre del producto</label>
+            <input type="hidden" name="id" value="<%= producto.id%>">
+            <div class="campos-form">
+                <input type="text" name="name" id="nombre" placeholder="<%= producto.name%>"><i class="far fa-edit"></i>
+            </div>
+            <label for="descripcion">Descripción:</label>
+            <div class="campos-form">
+                <input type="text" name="descripcion" id="descripcion" placeholder="Descripción"><i class="far fa-edit"></i>
+            </div>
+            <label for="imagen">Imágenes: </label>
+            <input type="file" name="images" id="imagen" accept=".jpg, .png" multiple>
+            <img class="imagen-existente" src="/img/<%= producto.image %>"/><!--<i class="far fa-image"></i><%= producto.image %><i class="fas fa-times"></i></p>-->
+
+            <label for="categoria">Categorias: </label>
+            <select name="category">
+                <option value="" selected></option>
+                <option value="muebles">Muebles</option>
+                <option value="baño">Baño</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="cocina">Cocina</option>
+                <option value="tablet">Tablet</option>
+                <option value="celulares">Celulares</option>
+            </select>
+
+            <label for="colores">Colores: </label>
+            <select name="colores">
+                <option value=""selected></option>
+                <option value="azul">Azul</option>
+                <option value="negro">Negro</option>
+                <option value="blanco">Blanco</option>
+            </select>
+
+            <label for="precio">Precio: </label>
+            <div class="campos-form">
+                <input type="number" name="price" id="precio" min="1" placeholder="$<%= producto.price%>"><i class="far fa-edit"></i>
+            </div>
+            <label for="descuento">Descuento: </label>
+            <div class="campos-form">
+                <input type="number" name="discount" id="descuento" min="1" placeholder="<%= producto.discount%>%"><i class="far fa-edit"></i>
+            </div>
+            <div class="botones">
+                <button type="submit">Guardar</button>
+                <button id="boton-reset" type="reset">Descartar cambios</button>
+            </div>
+        </form>
+        <form method="POST" action="/productos/<%= producto.id%>?_method=DELETE">
+            <div class="botones">
+                <button type="submit" onsubmit="confirmSubmit()" style="background-color:  #851919;">Borrar</button>
+            </div>
+        </form>
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+    <script>
+        function confirmSubmit()
+        {
+            var agree=confirm("Are you sure you wish to continue?");
+            if(agree){
+            return true
+            }else{
+            return false
+            }
+        }
+    </script>
+</body>
+</html>

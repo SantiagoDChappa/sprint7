@@ -1,0 +1,50 @@
+[
+ {
+  "id": "1",
+  "name": "Jorge",
+  "images": "1632518826091-UIiHw_7d.jpg",
+  "lastName": "Perez",
+  "email": "jorgeperez78@gmail.com",
+  "password": "1234"
+ },
+ {
+  "id": "2",
+  "name": "Maria",
+  "images": "1632518712225-maria.jpg",
+  "lastName": "Olivares",
+  "email": "maria0000@hotmail.com",
+  "password": "1234"
+ },
+ {
+  "id": "3",
+  "name": "Pedro(pedro1234)",
+  "images": "1634327590936-pedro.png",
+  "lastName": "Wilson",
+  "email": "pedro2511@yahoo.com",
+  "password": "$2a$10$ixBX/zfBwrtxv27JwAZ4e.BP8A2CofUtrr1DchWfAhKSS.jMnMNJ6"
+ },
+ {
+  "id": 4,
+  "name": "Gustavo",
+  "images": "1632610216002-mifoto.jpg",
+  "lastName": "Fuhrman",
+  "email": "gusfuhrman67@gmail.com",
+  "password": "$2a$10$jgFDdk65AYMEQ8zjN1KdX.xTpH.5nSJCyJd.dKj/Xv6itdFS4OyDi"
+ },
+ {
+  "id": 5,
+  "name": "Santiago",
+  "images": "1632777749736-iphone-8-plus-apple.jpg",
+  "lastName": "Chappa",
+  "email": "monito@gmail.com",
+  "password": "$2a$10$rave9Td6MVpNUcfOVQ493OZ2VWyaRxAU4rt0YvqqF56UiDXodx2O6"
+ },
+ {
+  "id": 6,
+  "name": "Jorge",
+  "images": "1632797995892-mesa-de-trabajo-120-x-70-cm.jpg",
+  "lastName": "Perez",
+  "email": "jorgeperez@gmail.com",
+  "password": "$2a$10$TYcCWI5UqZSGYJ99aejUouNefqxdT3sXeCfAqmMj9EtD5M0iV7dQe"
+ }
+]

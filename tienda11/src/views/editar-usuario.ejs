@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link href="/css/editar-usuario.css" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    
+    <main class="main-register">
+        <section class="registro">
+            <h2>REGISTRO</h2>
+        <form action="/usuario/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="left-register">
+            
+                <input type="text" name="name" id="nameRegister" placeholder="<%= user.name%>">
+            
+                <input type="text" name="lastName" id="apellidoRegister" placeholder="<%= user.lastName%>">
+
+                <label for="images">Foto de perfil:</label>
+                <% if(user.images){ %>
+                    <img id="imagePreview" src="/img/users/<%= user.images%>" alt="Preview">
+                <%} %> 
+                <input type="file" name="images" id="imagenes" accept=".jpg , .png" multiple>
+            
+                <input type="email" name="email" id="emailRegister" placeholder="<%= user.email%>">
+            
+                <input type="password" name="password" id="passwordRegister" placeholder="Contraseña">
+
+                <button type="submit" id="boton-registro">Guardar</button>
+        </div>
+        <div class="right-register">
+                <label for="boton-ingreso">¿Ya tenés una cuenta?</label>
+                <button id="boton-ingreso">Ingresar</button>
+        </div>
+    </form>
+    </section>
+    </main>
+    <footer  class="foot">
+        <%- include('partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link href="/css/usuario.css" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    
+    <main class="main-register">
+        <section class="registro">
+            <!--<h2>Detalle de usuario</h2>
+            <form action="/registro" method="POST">
+                <div class="left-register">
+                    
+                    <input type="text" name="name" id="nameRegister" value="<%= user.name%>">
+                
+                    <input type="text" name="lastName" id="apellidoRegister" value="<%= user.lastName%>">
+
+                    <label for="images">Foto de perfil:</label>
+                    <input type="file" name="images" id="imagenes" value="<%= user.images%>">
+                
+                    <input type="email" name="email" id="emailRegister" value="<%= user.email%>">
+                
+                    <input type="password" name="password" id="passwordRegister" placeholder="Contraseña">
+
+                    <button type="submit" id="boton-registro">Editar</button>
+                </div>
+                <div class="right-register">
+                    <label for="boton-ingreso">¿Ya tenés una cuenta?</label>
+                    <button id="boton-ingreso">Ingresar</button>
+                </div>
+            </form>-->
+            <img src="/img/users/<%= user.images%>" alt="">
+            <h3><strong>Nombre: </strong><%= user.name%></h3>
+            <h3><strong>Apellido: </strong><%= user.lastName%></h3>
+            <h3><strong>Email: </strong><%= user.email%></h3>
+            <button onclick="window.location.href='/usuario/<%= user.id%>/editar'">Editar</button>
+            <form method="POST" action="/usuario/<%= user.id%>?_method=DELETE">
+                <div class="botones">
+                    <button type="submit" onsubmit="confirmSubmit()" style="background-color:  #851919;">Borrar</button>
+                </div>
+            </form>
+            <button onclick="window.location.href='/usuario/logout'">Cerrar Sesión</button>
+        </section>
+    </main>
+    <footer  class="foot">
+        <%- include('partials/footer.ejs') %>
+    </footer>
+    <script>
+        function confirmSubmit()
+        {
+            var agree=confirm("Are you sure you wish to continue?");
+            if(agree){
+            return true
+            }else{
+            return false
+            }
+        }
+    </script>
+</body>
+</html>
